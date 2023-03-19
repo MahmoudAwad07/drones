@@ -45,6 +45,7 @@ public class ZoneController {
 
     @GetMapping
     public ResponseEntity<List<ZoneDTO>> getAllZones(){
+
         List<ZoneDTO> zones = zoneService.getZones();
         return new ResponseEntity<>(zones, HttpStatus.OK);
     }

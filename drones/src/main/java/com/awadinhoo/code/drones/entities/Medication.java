@@ -19,8 +19,12 @@ public class Medication {
     @Column(name = "CODE", nullable = false, unique = true)
     private String code;
 
+    @Column(name = "WEIGHT_IN_GRAMS", nullable = false)
+    private Integer weightInGrams;
+
+    @Lob
     @Column(name = "IMAGE", nullable = false)
-    private String image;
+    private Byte[] image;
 
 
 }

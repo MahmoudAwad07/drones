@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -20,7 +21,7 @@ public class Zone {
     private String name;
 
     @OneToMany(mappedBy = "zone")
-    private Set<City> cities;
+    private List<City> cities;
 
     @OneToOne(mappedBy = "supportedZone")
     private Fleet fleet;

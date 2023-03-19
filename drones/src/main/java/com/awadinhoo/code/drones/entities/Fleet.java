@@ -4,7 +4,7 @@ package com.awadinhoo.code.drones.entities;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,6 +22,12 @@ public class Fleet {
     @JoinColumn(name = "SUPPORTED_ZONE_ID", referencedColumnName = "zoneId")
     private Zone supportedZone;
 
+    @Column(name = "MAX_NUMBER_OF_DRONES", nullable = false)
+    private Integer maxNumberOfDrones;
+
     @OneToMany(mappedBy = "fleet")
-    private Set<Drone> drones;
+    private List<Drone> drones;
+
+    @Column(name = "ACTIVE", nullable = false)
+    private Integer active;
 }

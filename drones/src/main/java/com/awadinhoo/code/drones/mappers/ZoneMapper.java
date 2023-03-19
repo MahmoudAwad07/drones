@@ -1,8 +1,6 @@
 package com.awadinhoo.code.drones.mappers;
 
-import com.awadinhoo.code.drones.dto.CityDTO;
 import com.awadinhoo.code.drones.dto.ZoneDTO;
-import com.awadinhoo.code.drones.entities.City;
 import com.awadinhoo.code.drones.entities.Zone;
 import org.mapstruct.Mapper;
 

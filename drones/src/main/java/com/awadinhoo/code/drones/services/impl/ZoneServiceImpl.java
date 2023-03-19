@@ -75,11 +75,15 @@ public class ZoneServiceImpl implements ZoneService {
         // check if there are already served before in another zone, not the same zone , if so will throw an exception
         cityValidationService.isCityAlreadyExistInAnotherZone(zoneId, updatedZoneDTO.getCities());
 
+        /*
         zone.setName(updatedZoneDTO.getName());
         List<City> listCityDTOs = cityMapper.getListCityEntityFromDTOs(updatedZoneDTO.getCities());
-        zone.setCities(new HashSet<>(listCityDTOs));
+        zone.setCities(listCityDTOs);
+         */
 
-        return zoneMapper.getZoneDTOFromEntity(zoneRepository.save(zone));
+        Zone updatedZoneEntity = zoneMapper.getZoneEntityFromDTO(updatedZoneDTO);
+
+        return zoneMapper.getZoneDTOFromEntity(zoneRepository.save(updatedZoneEntity));
     }
 
     @Override
